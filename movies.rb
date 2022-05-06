@@ -48,7 +48,7 @@ queue.add_movie(movie2)
 queue.add_movie(movie3)
 queue.add_movie(movie4)
 
-queue.each { |movie| movie.watch }
+queue.each(&:watch)
 puts '____'
 queue.each_pg_movie { |movie| movie.watch }
 puts '____'
@@ -56,4 +56,4 @@ queue.each_by_rating('G') { |movie| movie.watch }
 
 puts '____'
 long_movies = queue.select { |m| m.duration > 100 }
-puts long_movies
+p long_movies
